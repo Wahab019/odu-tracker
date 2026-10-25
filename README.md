@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MTN ODU Pulse • 5G Wi-Fi Daily Data Usage Tracker
 
-## Getting Started
+A real-time telemetry and daily Wi-Fi data usage monitoring dashboard built specifically for **MTN Broadband 5G/4G Outdoor Units (ODU / CPE)** such as the **ZLT X17U / W154R PLUS**.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## ⚡ Features
+
+- **Direct Router Telemetry**: Communicates directly with your MTN ODU at `192.168.0.1` via internal CGI endpoints—**no router login credentials required** for real-time byte counters!
+- **Daily Usage Tracking**: Automatically records and aggregates download and upload volume per calendar day (`YYYY-MM-DD`).
+- **Real-Time Speed Meter**: Live download & upload speeds with interactive activity pulse sparklines.
+- **24-Hour Hourly Breakdown**: Interactive distribution chart showing which hours of the day burned the most data.
+- **Budget Alerts & Limits**: Set custom daily budgets (e.g. 10 GB/day) with progress indicators and warnings.
+- **Cell & Signal Health**: Displays real-time RSRP (-61 dBm), 5G NR RSRP, carrier aggregation bands (5G n78 + LTE B20+7), and router uptime.
+- **Historical Comparison**: Day-by-day table with historical totals, peak speeds, and one-click CSV / JSON export.
+- **Custom Baseline Calibration**: Easily adjust or recalibrate any day's counter to match your official MTN data balance.
+
+---
+
+## 🚀 Getting Started
+
+The app is running locally on:
+```
+http://localhost:3001
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+To run manually:
+```bash
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Open [http://localhost:3001](http://localhost:3001) in your browser.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## ⚙️ Configuration
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Click the **Settings** gear icon in the top right of the dashboard to configure:
+- **Router IP**: Defaults to `192.168.0.1`.
+- **Daily Budget Limit**: Set your target allowance in GB.
+- **Polling Frequency**: Adjust update interval (default: 3 seconds).
+- **Admin Password (Optional)**: If provided, allows querying connected Wi-Fi devices.
