@@ -1,3 +1,5 @@
+just a data usage tracker
+
 # MTN ODU Pulse • 5G Wi-Fi Daily Data Usage Tracker
 
 A real-time telemetry and daily Wi-Fi data usage monitoring dashboard built specifically for **MTN Broadband 5G/4G Outdoor Units (ODU / CPE)** such as the **ZLT X17U / W154R PLUS**.
