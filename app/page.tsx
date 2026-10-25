@@ -190,7 +190,7 @@ export default function Home() {
       <header className="border-b border-white/5 bg-[#0b0e17]/80 backdrop-blur-md sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
           <div className="flex items-center gap-3.5">
-            <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#ffcc00] to-[#e6a800] flex items-center justify-center shadow-lg shadow-[#ffcc00]/20 font-black text-black text-xl tracking-tighter">
+            <div className="w-11 h-11 rounded-xl bg-linear-to-br from-[#ffcc00] to-[#e6a800] flex items-center justify-center shadow-lg shadow-[#ffcc00]/20 font-black text-black text-xl tracking-tighter">
               MTN
             </div>
             <div>
@@ -300,7 +300,7 @@ export default function Home() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           {/* Card 1: Today's Data Usage (Prominent 5 Cols) */}
           <div className="lg:col-span-5 glass-panel-glow rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-[#ffcc00]/15 to-transparent rounded-full blur-2xl pointer-events-none" />
+            <div className="absolute top-0 right-0 w-64 h-64 bg-linear-to-bl from-[#ffcc00]/15 to-transparent rounded-full blur-2xl pointer-events-none" />
 
             <div>
               <div className="flex items-center justify-between">
@@ -458,7 +458,7 @@ export default function Home() {
                     return (
                       <div
                         key={idx}
-                        className="flex-1 rounded-sm bg-gradient-to-t from-[#ffcc00]/30 to-[#ffcc00] transition-all duration-300"
+                        className="flex-1 rounded-sm bg-linear-to-t from-[#ffcc00]/30 to-[#ffcc00] transition-all duration-300"
                         style={{ height: `${heightPercent}%` }}
                         title={`${sp.time}: DL ${formatSpeed(sp.dlSpeedBps)} | UL ${formatSpeed(sp.ulSpeedBps)}`}
                       />
@@ -657,7 +657,7 @@ export default function Home() {
                   return (
                     <tr
                       key={record.date}
-                      className={`hover:bg-white/[0.02] transition-colors ${
+                      className={`hover:bg-white/2 transition-colors ${
                         isToday ? "bg-[#ffcc00]/5" : ""
                       }`}
                     >
