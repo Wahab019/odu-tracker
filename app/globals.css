@@ -1,40 +1,56 @@
 @import "tailwindcss";
 
+@theme {
+  --font-serif: var(--font-eczar), Georgia, serif;
+  --font-sans: var(--font-eczar), -apple-system, BlinkMacSystemFont, "Segoe UI", serif;
+  --font-mono: var(--font-mono), monospace;
+}
+
 @layer base {
   :root {
-    --background: #07090e;
-    --foreground: #f4f4f6;
-    --mtn-yellow: #ffcc00;
-    --mtn-yellow-dim: #e6b800;
-    --mtn-yellow-glow: rgba(255, 204, 0, 0.25);
+    --background: #0b0d10;
+    --foreground: #f4efe4;
+    --charcoal-black: #0d0f13;
+    --charcoal-card: #15181f;
+    --charcoal-elevated: #1c202a;
+    --cool-gray-muted: #8b93a3;
+    --cool-gray-border: rgba(162, 172, 188, 0.14);
+    --soft-ivory: #f4efe4;
+    --soft-ivory-dim: #e4ddcf;
+    --soft-ivory-glow: rgba(244, 239, 228, 0.16);
+  }
+
+  body {
+    font-family: var(--font-eczar), Georgia, serif;
   }
 }
 
 body {
-  background-color: #07090e;
+  background-color: #0b0d10;
   background-image: 
-    radial-gradient(at 0% 0%, rgba(255, 204, 0, 0.07) 0px, transparent 50%),
-    radial-gradient(at 100% 0%, rgba(14, 165, 233, 0.05) 0px, transparent 50%),
-    radial-gradient(at 50% 100%, rgba(255, 204, 0, 0.04) 0px, transparent 50%);
+    radial-gradient(at 0% 0%, rgba(244, 239, 228, 0.06) 0px, transparent 45%),
+    radial-gradient(at 100% 0%, rgba(139, 147, 163, 0.08) 0px, transparent 50%),
+    radial-gradient(at 50% 100%, rgba(244, 239, 228, 0.03) 0px, transparent 50%);
   background-attachment: fixed;
   color: var(--foreground);
   min-height: 100vh;
 }
 
-/* Glassmorphism surfaces */
+/* Ink Wash Glassmorphism surfaces */
 .glass-panel {
-  background: rgba(15, 18, 28, 0.72);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(18, 21, 28, 0.78);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(162, 172, 188, 0.13);
+  box-shadow: 0 4px 24px -2px rgba(0, 0, 0, 0.4);
 }
 
 .glass-panel-glow {
-  background: rgba(18, 22, 34, 0.85);
+  background: rgba(21, 25, 34, 0.88);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 204, 0, 0.22);
-  box-shadow: 0 0 35px -5px rgba(255, 204, 0, 0.12);
+  border: 1px solid rgba(244, 239, 228, 0.22);
+  box-shadow: 0 0 35px -8px rgba(244, 239, 228, 0.12), 0 8px 30px -4px rgba(0, 0, 0, 0.5);
 }
 
 .glass-panel-hover {
@@ -42,29 +58,48 @@ body {
 }
 
 .glass-panel-hover:hover {
-  border-color: rgba(255, 204, 0, 0.35);
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px 0 rgba(255, 204, 0, 0.15);
+  border-color: rgba(244, 239, 228, 0.35);
+  box-shadow: 0 12px 35px -10px rgba(0, 0, 0, 0.6), 0 0 25px 0 rgba(244, 239, 228, 0.14);
   transform: translateY(-2px);
+}
+
+/* Subtle ink wash button */
+.btn-ivory {
+  background-color: #f4efe4;
+  color: #0d0f13;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), 0 0 18px rgba(244, 239, 228, 0.12);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-ivory:hover {
+  background-color: #ffffff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35), 0 0 24px rgba(244, 239, 228, 0.22);
+  transform: translateY(-1px);
+}
+
+.btn-ivory:active {
+  transform: translateY(0);
+  background-color: #e8e2d4;
 }
 
 /* Pulse animation for live beacon */
 @keyframes beacon-pulse {
   0% {
     transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+    box-shadow: 0 0 0 0 rgba(244, 239, 228, 0.7);
   }
   70% {
     transform: scale(1);
-    box-shadow: 0 0 0 10px rgba(34, 197, 94, 0);
+    box-shadow: 0 0 0 10px rgba(244, 239, 228, 0);
   }
   100% {
     transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+    box-shadow: 0 0 0 0 rgba(244, 239, 228, 0);
   }
 }
 
 .beacon-live {
-  animation: beacon-pulse 2s infinite;
+  animation: beacon-pulse 2.2s infinite cubic-bezier(0.4, 0, 0.6, 1);
 }
 
 /* Custom scrollbars */
@@ -74,14 +109,14 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #090b12;
+  background: #0d0f13;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #222738;
+  background: #252934;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #ffcc00;
+  background: #8b93a3;
 }
