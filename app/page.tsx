@@ -302,7 +302,7 @@ export default function Home() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           {/* Card 1: Today's Data Usage (Prominent 5 Cols) */}
           <div className="lg:col-span-5 glass-panel-glow rounded-3xl p-6 sm:p-7 relative overflow-hidden flex flex-col justify-between">
-            <div className="absolute top-0 right-0 w-72 h-72 bg-gradient-to-bl from-[#f4efe4]/10 via-[#a2acbc]/5 to-transparent rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute top-0 right-0 w-72 h-72 bg-linear-to-bl from-[#f4efe4]/10 via-[#a2acbc]/5 to-transparent rounded-full blur-3xl pointer-events-none" />
 
             <div>
               <div className="flex items-center justify-between">
@@ -354,7 +354,7 @@ export default function Home() {
                 <div className="h-2.5 w-full bg-[#161922] border border-[#a2acbc]/10 rounded-full overflow-hidden flex">
                   <div
                     style={{ width: `${dlSharePercent}%` }}
-                    className="bg-gradient-to-r from-[#d9d2c5] to-[#f4efe4] transition-all duration-500"
+                    className="bg-linear-to-r from-[#d9d2c5] to-[#f4efe4] transition-all duration-500"
                   />
                   <div
                     style={{ width: `${ulSharePercent}%` }}
@@ -379,10 +379,10 @@ export default function Home() {
                   style={{ width: `${Math.min(100, dailyPercent)}%` }}
                   className={`h-full rounded-full transition-all duration-500 ${
                     dailyPercent >= 100
-                      ? "bg-gradient-to-r from-[#8f3939] to-[#dc6c6c]"
+                      ? "bg-linear-to-r from-[#8f3939] to-[#dc6c6c]"
                       : dailyPercent >= 80
-                      ? "bg-gradient-to-r from-[#b38644] to-[#ebd19d]"
-                      : "bg-gradient-to-r from-[#cfc7b7] to-[#f4efe4]"
+                      ? "bg-linear-to-r from-[#b38644] to-[#ebd19d]"
+                      : "bg-linear-to-r from-[#cfc7b7] to-[#f4efe4]"
                   }`}
                 />
               </div>
@@ -460,7 +460,7 @@ export default function Home() {
                     return (
                       <div
                         key={idx}
-                        className="flex-1 rounded-sm bg-gradient-to-t from-[#363d4d] to-[#f4efe4] transition-all duration-300"
+                        className="flex-1 rounded-sm bg-linear-to-t from-[#363d4d] to-[#f4efe4] transition-all duration-300"
                         style={{ height: `${heightPercent}%` }}
                         title={`${sp.time}: DL ${formatSpeed(sp.dlSpeedBps)} | UL ${formatSpeed(sp.ulSpeedBps)}`}
                       />
@@ -583,9 +583,9 @@ export default function Home() {
                     style={{ height: `${percent}%` }}
                     className={`w-full rounded-t-sm transition-all duration-300 ${
                       isCurrentHour
-                        ? "bg-gradient-to-t from-[#d9d2c5] to-[#ffffff] shadow-lg shadow-white/10 ring-1 ring-[#f4efe4]/30"
+                        ? "bg-linear-to-t from-[#d9d2c5] to-[#ffffff] shadow-lg shadow-white/10 ring-1 ring-[#f4efe4]/30"
                         : total > 0
-                        ? "bg-gradient-to-t from-[#2a303d] to-[#6c7689] hover:to-[#f4efe4]"
+                        ? "bg-linear-to-t from-[#2a303d] to-[#6c7689] hover:to-[#f4efe4]"
                         : "bg-[#181c25]/50"
                     }`}
                   />
